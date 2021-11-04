@@ -1,21 +1,21 @@
 class SearchView {
-  #parentEl = document.querySelector('.search');
+  _parentEl = document.querySelector('.search');
 
   getQuery() {
     // nacte query
-    const query = this.#parentEl.querySelector('.search__field').value;
+    const query = this._parentEl.querySelector('.search__field').value;
     // smaze query z vyhledavaciho pole
-    this.#clearInput();
+    this._clearInput();
     return query;
   }
 
-  #clearInput() {
-    this.#parentEl.querySelector('.search__field').value = '';
+  _clearInput() {
+    this._parentEl.querySelector('.search__field').value = '';
   }
 
   addHandlerSearch(handler) {
     //tim ze to dam na cely element udelam to ze to listen cely element enter i click
-    this.#parentEl.addEventListener('submit', function (e) {
+    this._parentEl.addEventListener('submit', function (e) {
       e.preventDefault();
       handler();
     });
